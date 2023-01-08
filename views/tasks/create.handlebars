@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="m-5 text-center text-uppercase fs-3">criação de tasks</h1>
+            <form action="/tasks/add" method="POST">
+                <div class="form-floating m-3">
+                    <input type="text" name="title" class="form-control" id="floatingInput"
+                        placeholder="O que deseja fazer?">
+                    <label for="title">Titulo</label>
+                </div>
+                <div class="form-floating m-3">
+                    <textarea type="text" name="description" class="form-control" id="floatingTextarea2"
+                        placeholder="Descreva a tarefa a ser realizada..."></textarea>
+                    <label for="description">Descrição:</label>
+                </div>
+                <input type="submit" value='Criar' class="btn btn-dark text-uppercase fs-6 m-3">
+            </form>
+        </div>
+    </div>
+</div>

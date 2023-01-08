@@ -1,0 +1,21 @@
+<div class="container fluid">
+    <div class="row">
+        <div class="col">
+            <h1 class="m-5 text-center text-uppercase fs-3">Edição da Task: <span>{{task.title}}</span></h1>
+            <form action="/tasks/edit" method="POST">
+                <input type="hidden" name="id" value="{{task.id}}">
+                <div class="form-floating m-3">
+                    <input type="text" name="title" class="form-control border-dark" id="floatingInput"
+                        placeholder="O que deseja fazer?" value="{{task.title}}">
+                    <label for="title">Titulo</label>
+                </div>
+                <div class="form-floating m-3">
+                    <textarea type="text" name="description" class="form-control border-dark" id="floatingTextarea2"
+                        placeholder="Descreva a tarefa a ser realizada...">{{task.description}}</textarea>
+                    <label for="description">Descrição:</label>
+                </div>
+                <input type="submit" value='Editar' class="btn btn-dark text-uppercase fs-6 m-3">
+            </form>
+        </div>
+    </div>
+</div>

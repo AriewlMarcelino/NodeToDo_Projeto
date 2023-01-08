@@ -1,0 +1,39 @@
+<div class="container text-center fluid all">
+    <h1 class="text-center mt-5">Todas as tasks</h1>
+    <div class="row">
+        <div class="col">
+            <ul class="task-list mt-5">
+                {{#each tasks}}
+                <li
+                    class="nav-item nav border border-black p-4 border-opacity-25 mb-3 shadow p-3 mb-5 bg-body-tertiary rounded">
+                    {{#if this.done}}
+                    <div class="cont-pricipal">
+                        <div class="alert alert-success flag-suc" role="alert">
+                            <p>Tarefa concluida!</p>
+                        </div>
+                        {{/if}}
+                        <a href="/tasks/edit/{{this.id}}"
+                            class="title fs-3 text-decoration-none text-black link">{{this.title}}
+                            <span class="spanhbs">{{this.description}}</span></a>
+                        <div class="actions">
+                            <form action="/tasks/updatestatus" method="POST">
+                                <input type="hidden" name='id' value="{{this.id}}">
+                                <input type="hidden" name='done' value="{{this.done}}">
+                                <button type="submit" class="bg-white border border-0">
+                                    <i class="bi bi-check2 fs-1 p-1 text-success"></i>
+                                </button>
+                            </form>
+                            <a href="/tasks/edit/{{this.id}}"><i class="bi bi-pencil-square fs-1 p-1"></i></a>
+                            <form action="/tasks/remove" method="POST">
+                                <input type="hidden" name="id" value={{this.id}}>
+                                <button type="submit" class="btn btn-dark mx-2">
+                                    <i class="bi bi-x-lg"></i>
+                                </button>
+                            </form>
+                        </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
